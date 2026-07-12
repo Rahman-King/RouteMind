@@ -1,0 +1,34 @@
+[
+  {
+    "task_id": "practice-01",
+    "answer": "The capital of Australia is **Canberra**. It is an inland city built around **Lake Burley Griffin** (on the Molonglo River), and lies roughly 150 km from the **Tasman Sea** to the east."
+  },
+  {
+    "task_id": "practice-02",
+    "answer": "**Step 1:** Calculate items sold on Monday.  \n15% of 240 = 0.15 × 240 = **36 items**\n\n**Step 2:** Add items sold on Tuesday.  \n36 + 60 = **96 items** sold in total\n\n**Step 3:** Subtract from the original amount.  \n240 − 96 = **144 items**\n\n**Final Answer: 144**"
+  },
+  {
+    "task_id": "practice-03",
+    "answer": "**Mixed/Neutral**\n\nThe review contains both a positive remark about battery life and a negative complaint about the screen scratching easily."
+  },
+  {
+    "task_id": "practice-04",
+    "answer": "Next.js is a React framework for building full-stack web applications that uses React components for user interfaces and provides additional features and optimizations by automatically abstracting and configuring underlying tooling like bundling and compiling, allowing developers to focus on building their applications rather than managing tool setup."
+  },
+  {
+    "task_id": "practice-05",
+    "answer": "Maria Sanchez (Person)\nFireworks AI (Organization)\nBerlin (Location)\nlast March (Date)"
+  },
+  {
+    "task_id": "practice-06",
+    "answer": "The bug is that the function returns the first element immediately without comparing it to the rest of the list.\n\nHere is the corrected implementation:\n\n```python\ndef get_max(nums):\n    if not nums:\n        return None\n    maximum = nums[0]\n    for num in nums[1:]:\n        if num > maximum:\n            maximum = num\n    return maximum\n```\n\n**What changed:**\n- Added a check for an empty list to avoid an `IndexError`.\n- Initialized `maximum` with the first element.\n- Iterated through the remaining elements to update `maximum` whenever a larger value is found.\n\n**Alternative (Pythonic):**\nIf you prefer using Python's built-in, you can simply write:\n```python\ndef get_max(nums):\n    return max(nums) if nums else None\n```"
+  },
+  {
+    "task_id": "practice-07",
+    "answer": "Here is the step-by-step reasoning:\n\n1. **Assign Jo's pet.**  \n   We are told directly that **Jo owns the dog**.\n\n2. **Determine Sam's pet.**  \n   Sam cannot own the bird (given), and the dog is already taken by Jo.  \n   Therefore, the only remaining pet for Sam is the **cat**.\n\n3. **Determine Lee's pet.**  \n   The only pet left unassigned is the bird, so **Lee owns the bird**.\n\n**Final Answer:** **Sam** owns the cat."
+  },
+  {
+    "task_id": "practice-08",
+    "answer": "```python\ndef second_largest(numbers):\n    \"\"\"\n    Return the second-largest unique number in the list.\n    Returns None if the list has fewer than two distinct values.\n    \"\"\"\n    first = second = None\n\n    for num in numbers:\n        if first is None or num > first:\n            second = first\n            first = num\n        elif num != first and (second is None or num > second):\n            second = num\n\n    return second\n```\n\n**How it works**\n- Tracks the largest (`first`) and second-largest (`second`) unique values in a single pass — **O(n)** time, **O(1)** extra space.\n- Duplicates of the largest number are ignored, so `[5, 5, 3]` correctly returns `3`.\n- Returns `None` when a valid second-largest does not exist (e.g., empty list, single element, or all elements identical)."
+  }
+]

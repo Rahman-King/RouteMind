@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  routemind:
+    image: ghcr.io/rahman-king/routemind:latest
+    container_name: routemind-app
+    ports:
+      - "3000:3000"
+    environment:
+      - FIREWORKS_API_KEY=${FIREWORKS_API_KEY}
+      - FIREWORKS_BASE_URL=${FIREWORKS_BASE_URL:-https://api.fireworks.ai}
+      - ALLOWED_MODELS=${ALLOWED_MODELS}
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      - OLLAMA_ROUTER=${OLLAMA_ROUTER:-true}
+      - OLLAMA_ROUTER_TIMEOUT_MS=${OLLAMA_ROUTER_TIMEOUT_MS:-1500}
+      - NODE_ENV=production
+    volumes:
+      - ./output:/output
+      - ./input:/input
+    restart: unless-stopped
